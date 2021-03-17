@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+import os
 
 intents = discord.Intents.default()
 intents.members = True
@@ -56,4 +57,5 @@ def get_author_name(_name):
     return r_name[: str(r_name).find('#')]
 
 
-client.run('ODIxNjY4NjM4NDc3MjU0NjU2.YFHEjQ.Z8KPaSTldRnpRf8w-l0msSGO_os')
+token = os.environ.get("BOT_TOKEN")
+client.run(str(token))
